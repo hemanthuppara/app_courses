@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
   end 
   
   def authenticate
+    puts "Authenticating user..."
     response = RestClient.post I18n.t('canvas_url')+I18n.t('authenticate') , {accept: 'json'}
-    p response 
     hash = JSON.parse(response.body)
     if hash.has_key? "token"
       session[:token] = hash["token"]
