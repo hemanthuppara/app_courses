@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
   end 
   
   def show
-    response = RestClient.get  courses_url+"/#{params[:id]}", {:params => query_params}
+    response = RestClient.get  courses_url+"/#{params[:id]}", {:params => authenticate_params}
     hash = JSON.parse(response.body)
     @course = hash
   end 

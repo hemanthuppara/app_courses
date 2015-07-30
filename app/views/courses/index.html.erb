@@ -4,12 +4,14 @@
       <td>Code</td>
       <td>Name</td>
       <td>Description</td>
+      <td>Show Details</td>
   </tr>    
 <% @courses.each do |course| %>
   <tr>
       <td><%=course['code']%></td>
       <td><%=course['name']%></td>
       <td><textarea><%=course['description']%></textarea></td>
+      <td><a href="/courses/<%=course['id']%>">Show Details</a></a></td>
       </td>
   </tr>
 <% end %>
