@@ -5,11 +5,10 @@ class CoursesController < ApplicationController
     if params[:url]
       req_params.merge! session[params[:url]]
     end 
-    p req_params
     response = RestClient.get courses_url , {:params => req_params}
-    
-    hash = JSON.parse(response.body)
+    @courses = JSON.parse(response.body)
     @links = {}
+    
     response.headers[:link].split(",").each do |each_link|
       link, linktext = (each_link).split(";")
       links_params = {}
@@ -22,14 +21,11 @@ class CoursesController < ApplicationController
       session[linktext] = links_params
       @links[linktext] = true 
     end 
-    puts @links
-    @courses = hash
   end 
   
   def show
     response = RestClient.get  courses_url+"/#{params[:id]}", {:params => authenticate_params}
-    hash = JSON.parse(response.body)
-    @course = hash
+    @course = JSON.parse(response.body)
   end 
   
   private
