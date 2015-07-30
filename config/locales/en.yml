@@ -21,3 +21,5 @@
 
 en:
   hello: "Hello world"
+  canvas_url: "http://canvas-api.herokuapp.com"
+  authenticate: "/api/v1/tokens"
