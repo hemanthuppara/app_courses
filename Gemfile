@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 gem 'rest-client'
 gem 'activeresource'
+gem 'request_store'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

@@ -16,3 +16,14 @@
   </tr>
 <% end %>
 </table>
+<% if @links["first"] %>
+  <a href="/courses?url=first">First</a>
+<% end %>
+
+<% if @links["next"] %>
+  <a href="/courses?url=next">Next</a>
+<% end %>
+
+<% if @links["last"] %>
+  <a href="/courses?url=last">Last</a>
+<% end %>
