@@ -1,4 +1,7 @@
-<%= @course['name'].upcase %>
-<p><%= @course['description']%></p>
+<h4 class="text text-error"><%= @course['name'].upcase %></h4>
+<br />
+Description: <p class="text text-info"><%= @course['description']%></p>
+Code: <%= @course['code'] %>
 
+<br />
 <%= link_to "Back", courses_url%>

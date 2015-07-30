@@ -1,6 +1,6 @@
 
-<table>
-  <tr>
+<table class="table table-bordered table-condensed">
+  <tr class="warning">
       <td>Code</td>
       <td>Name</td>
       <td>Description</td>
@@ -17,13 +17,13 @@
 <% end %>
 </table>
 <% if @links["first"] %>
-  <a href="/courses?url=first">First</a>
+  <a href="/courses?url=first" class="btn btn-primary pull-left">First</a>&nbsp;&nbsp;
 <% end %>
 
 <% if @links["next"] %>
-  <a href="/courses?url=next">Next</a>
+  <a href="/courses?url=next" class="btn btn-success pull-center">Next</a>&nbsp;&nbsp;
 <% end %>
 
 <% if @links["last"] %>
-  <a href="/courses?url=last">Last</a>
+  <a href="/courses?url=last" class="btn btn-danger pull-right">Last</a>&nbsp;&nbsp;
 <% end %>
